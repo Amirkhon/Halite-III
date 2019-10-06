@@ -21,10 +21,11 @@ app.register_blueprint(login.basic_login, url_prefix="/v1/login")
 app.register_blueprint(login.oauth_logout, url_prefix="/v1/logout")
 app.register_blueprint(web.web_api, url_prefix="/v1/api")
 
-@app.before_request
+'''@app.before_request
 def force_https():
     if not flask.request.is_secure and flask.request.endpoint and \
             not flask.request.url.startswith('http://localhost') and \
             not app.config["DEBUG"] == True and \
             flask.request.endpoint != 'health_check':
         return flask.redirect(flask.request.url.replace('http://', 'https://'))
+'''
