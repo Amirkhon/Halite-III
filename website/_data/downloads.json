@@ -1,0 +1,34 @@
+{
+  "platforms": [
+    "Linux",
+    "Windows"
+  ],
+  "languages": [
+    {
+      "language": "Java",
+      "files": [
+        "assets/downloads/Halite3_Java_None.zip",
+        "assets/downloads/Halite3_Java_Linux.zip",
+        "assets/downloads/Halite3_Java_Windows.zip"
+      ],
+      "version": "1.0"
+    }
+  ],
+  "environments": [
+    "assets/downloads/Halite3_Linux.zip",
+    "assets/downloads/Halite3_Windows.zip"
+  ],
+  "tools": [
+    {
+      "name": "CLI Client Tools",
+      "files": [
+        "assets/downloads/Halite3Tools.zip",
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "source": "assets/downloads/Halite3Source.zip",
+  "version": "1.0"
+}
