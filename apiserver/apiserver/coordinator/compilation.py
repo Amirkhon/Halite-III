@@ -186,7 +186,7 @@ def update_compilation_status():
                 (model.bots.c.id == bot_id)
             )).first()
 
-            notify.send_templated_notification(
+            '''notify.send_templated_notification(
                 notify.Recipient(str(user["id"]), user["username"], user["email"],
                                  user["organization_name"], user["player_level"],
                                  user["creation_time"].isoformat()),
@@ -197,7 +197,7 @@ def update_compilation_status():
                 },
                 config.GOODNEWS_ACCOMPLISHMENTS,
                 config.C_COMPLIATION_SUCCESS
-            )
+            )'''
 
             return util.response_success()
         else:
@@ -208,7 +208,7 @@ def update_compilation_status():
                                        chunk_size=262144)
             blob.upload_from_string(errors)
 
-            notify.send_templated_notification(
+            '''notify.send_templated_notification(
                 notify.Recipient(str(user["id"]), user["username"], user["email"],
                                  user["organization_name"], user["player_level"],
                                  user["creation_time"].isoformat()),
@@ -222,5 +222,5 @@ def update_compilation_status():
                 },
                 config.GAME_ERROR_MESSAGES,
                 config.C_COMPILATION_ERROR
-            )
+            )'''
             return util.response_success()

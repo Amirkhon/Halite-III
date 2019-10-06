@@ -27,10 +27,10 @@ def send_notification(recipient_email, recipient_name, subject, body,
                       attachments=None):
     mail = sendgrid.helpers.mail.Mail()
 
-    mail.from_email = sendgrid.Email("halite@halite.io", "Halite Challenge")
+    mail.from_email = sendgrid.Email("students24@aciworldwide.ru", "Studets24 Hackathon")
     personalization = sendgrid.helpers.mail.Personalization()
     personalization.add_to(sendgrid.helpers.mail.Email(recipient_email, recipient_name))
-    personalization.subject = "Halite Challenge: " + subject
+    personalization.subject = "Studets24 Hackathon: " + subject
     mail.add_personalization(personalization)
 
     mail.add_content(sendgrid.helpers.mail.Content("text/html", body))
@@ -60,7 +60,7 @@ def send_templated_notification(recipient, template_id, substitutions, group_id,
     if not recipient.organization:
         recipient = recipient._replace(organization="(no affiliation)")
 
-    mail.from_email = sendgrid.Email("halite@halite.io", "Halite Challenge")
+    mail.from_email = sendgrid.Email("students24@aciworldwide.ru", "Studets24 Hackathon")
     personalization = sendgrid.helpers.mail.Personalization()
     personalization.add_to(sendgrid.helpers.mail.Email(recipient.email, recipient.username))
 
@@ -94,7 +94,7 @@ def send_templated_notification_simple(email, template_id, group_id, category):
     """
     mail = sendgrid.helpers.mail.Mail()
 
-    mail.from_email = sendgrid.Email("halite@halite.io", "Halite Challenge")
+    mail.from_email = sendgrid.Email("students24@aciworldwide.ru", "Studets24 Hackathon")
     personalization = sendgrid.helpers.mail.Personalization()
     personalization.add_to(sendgrid.helpers.mail.Email(email, email))
 
