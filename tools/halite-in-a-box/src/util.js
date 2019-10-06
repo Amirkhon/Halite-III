@@ -11,8 +11,8 @@ import * as logger from './logger';
 
 const DONE_READING = Symbol();
 
-export const WEBSITE_URL = 'https://halite.io';
-export const API_SERVER_URL = 'https://api.2018.halite.io/v1';
+export const WEBSITE_URL = 'http://35.237.189.116';
+export const API_SERVER_URL = 'http://35.237.189.116/v1';
 
 export async function* callAny(process, args, env) {
     const subprocess = spawn(process, args, {

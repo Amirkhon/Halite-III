@@ -92,7 +92,7 @@ function exportBot(workspace) {
 }
 
 function apiUrl(url) {
-    return `https://api.2018.halite.io/v1/${url}`;
+    return `http://35.237.189.116/v1/${url}`;
 }
 
 async function fetchApi(endpoint, params) {
