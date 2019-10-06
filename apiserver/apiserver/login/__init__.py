@@ -33,7 +33,7 @@ github = oauth.remote_app(
     access_token_url="https://github.com/login/oauth/access_token",
     authorize_url="https://github.com/login/oauth/authorize",
 )
-google = oauth.remote_app(
+'''google = oauth.remote_app(
     "google",
     consumer_key=config.OAUTH_GOOGLE_CONSUMER_KEY,
     consumer_secret=config.OAUTH_GOOGLE_CONSUMER_SECRET,
@@ -43,7 +43,7 @@ google = oauth.remote_app(
     access_token_method='POST',
     access_token_url='https://accounts.google.com/o/oauth2/token',
     authorize_url='https://accounts.google.com/o/oauth2/auth',
-)
+)'''
 
 
 @oauth_login.route("/github")
@@ -56,6 +56,7 @@ def github_login_init():
     return github.authorize(callback=full_url)
 
 
+'''
 @oauth_login.route("/google")
 def google_login_init():
     url = urllib.parse.urlparse(config.API_URL)
@@ -64,7 +65,7 @@ def google_login_init():
         base_url,
         flask.url_for(".google_login_callback"))
     return google.authorize(callback=full_url)
-
+'''
 
 @oauth_login.route("/me")
 @cross_origin(methods=["GET"], origins=config.CORS_ORIGINS, supports_credentials=True)
@@ -142,7 +143,7 @@ def github_login_callback():
                                   default_username=default_username)
 
 
-@oauth_login.route("/response/google")
+'''@oauth_login.route("/response/google")
 def google_login_callback():
     try:
         response = google.authorized_response()
@@ -174,7 +175,7 @@ def google_login_callback():
     google_user_id = user_data["id"]
     email = user_data["email"]
     return generic_login_callback(email, GOOGLE_PROVIDER, google_user_id)
-
+'''
 
 def generic_login_callback(email, oauth_provider, oauth_id, default_username=None):
     with model.engine.connect() as conn:
@@ -239,7 +240,8 @@ def generic_login_callback(email, oauth_provider, oauth_id, default_username=Non
 def github_tokengetter():
     return flask.session.get("github_token")
 
-
+'''
 @google.tokengetter
 def google_tokengetter():
     return flask.session.get("google_token")
+'''

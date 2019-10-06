@@ -40,55 +40,55 @@ MAX_COMPILED_BOT_UPLOAD_SIZE = 100 * 1024 * 1024
 # Max bot file size
 MAX_BOT_FILE_SIZE = 100 * 1024 * 1024
 # Secret key for Flask session cookies
-FLASK_SECRET_KEY = ""
+FLASK_SECRET_KEY = "24secret24"
 # Where to look for API keys
 API_KEY_HEADER = "X-Api-Key"
 # What session cookie to use
 SESSION_COOKIE = "user_id"
-SESSION_SECRET = ""
+SESSION_SECRET = "s24secret"
 
 # Google Cloud
-GCLOUD_PROJECT = ''
-GCLOUD_PROJECT_ID = ''
-GCLOUD_ZONE = 'us-central1-c'
+GCLOUD_PROJECT = 'Students24'
+GCLOUD_PROJECT_ID = 'dynamic-concept-254710'
+GCLOUD_ZONE = 'us-east1-b'
 
-GCLOUD_COMPILATION_BUCKET = ''
-GCLOUD_BOT_BUCKET = ''
+GCLOUD_COMPILATION_BUCKET = 's24_cb'
+GCLOUD_BOT_BUCKET = 's24_ub'
 # Replays are saved in different buckets based on player level
 GCLOUD_REPLAY_BUCKETS = {
     # 0 is the normal bucket
-    0: '',
+    0: 's24_r',
     # 1 is the bucket for gold and above players
-    1: '',
+    1: 's24_gr',
 }
-GCLOUD_ONDEMAND_REPLAY_BUCKET = ""
+GCLOUD_ONDEMAND_REPLAY_BUCKET = "s24_or"
 # Bucket for pre-assembled bots that players fight in the
 # tutorial/online editor
-GCLOUD_GYM_BUCKET = ""
-GCLOUD_ERROR_LOG_BUCKET = ''
-GCLOUD_DEPLOYED_ARTIFACTS_BUCKET = ''
-GCLOUD_EDITOR_BUCKET = ''
-GCLOUD_WORKER_LOG_BUCKET = ''
+GCLOUD_GYM_BUCKET = "s24_g"
+GCLOUD_ERROR_LOG_BUCKET = 's24_el'
+GCLOUD_DEPLOYED_ARTIFACTS_BUCKET = 's24_da'
+GCLOUD_EDITOR_BUCKET = 's24_e'
+GCLOUD_WORKER_LOG_BUCKET = 's24_wl'
 
 # The name of the worker source blob in the object storage bucket.
-WORKER_ARTIFACT_KEY = ""
+WORKER_ARTIFACT_KEY = "Halite.tgz"
 
-DATABASE_PROJECT_ID = ""
-DATABASE_URL = "postgresql+psycopg2://user:pass@localhost:{port}/dbname"
+DATABASE_PROJECT_ID = "dynamic-concept-254710"
+DATABASE_URL = "postgresql+psycopg2://postgres:postgres@localhost:{port}/halite3"
 DATABASES = [
     # Read-write master
-    ("zone", "instance-name", 3307),
+    ("us-east1-b", "dynamic-concept-254710:us-east1:halite3", 3307),
     # Read replica
-    ("zone", "instance-name", 3308),
+    ("us-east1-b", "dynamic-concept-254710:us-east1:halite3-replica", 3308),
 ]
 
 # OAuth
-OAUTH_GITHUB_CONSUMER_KEY = ""
-OAUTH_GITHUB_CONSUMER_SECRET = ""
+OAUTH_GITHUB_CONSUMER_KEY = "3738a242abdf56ace0bd"
+OAUTH_GITHUB_CONSUMER_SECRET = "5175d8e4c838c07a24845af8fcc7bc974b8c0887"
 
 # CORS setup
-SITE_URL = ""
-API_URL = ""
+SITE_URL = "http://35.237.189.116"
+API_URL = "http://35.237.189.116"
 CORS_ORIGINS = [SITE_URL]
 
 # API Key authentication
@@ -102,7 +102,7 @@ DISCOURSE_SSO_SECRET = b""
 DISCOURSE_URL = "https://forums.halite.io/sso"
 
 # SendGrid
-SENDGRID_API_KEY = ""
+SENDGRID_API_KEY = "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"
 SENDGRID_SANDBOX_MODE = True
 
 # Emails

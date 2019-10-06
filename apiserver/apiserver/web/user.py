@@ -768,22 +768,22 @@ def delete_user(intended_user_id, *, user_id):
 @web_api.route("/user/addsubscriber/<string:recipient>", methods=["POST"])
 @util.cross_origin(methods=["POST"])
 def add_subscriber(recipient):
-    notify.add_user_to_contact_list(recipient)
+    '''notify.add_user_to_contact_list(recipient)
     notify.send_templated_notification_simple(
         recipient,
         config.NEW_SUBSCRIBER_TEMPLATE,
         config.GOODNEWS_ACCOMPLISHMENTS,
-        config.C_NEWSLETTER_SUBSCRIPTION)
+        config.C_NEWSLETTER_SUBSCRIPTION)'''
     return util.response_success()
 
 @web_api.route("/invitation/user/<string:recipient>", methods=["POST"])
 @util.cross_origin(methods=["POST"])
 def invite_friend(recipient):
-    notify.send_templated_notification_simple(
+    '''notify.send_templated_notification_simple(
         recipient,
         config.INVITE_FRIEND_TEMPLATE,
         config.GOODNEWS_ACCOMPLISHMENTS,
-        config.C_INVITE_FRIEND)
+        config.C_INVITE_FRIEND)'''
     return util.response_success()
 
 @web_api.route("/api_key", methods=["POST"])
