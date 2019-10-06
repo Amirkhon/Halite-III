@@ -25,7 +25,7 @@ while read -r instance_config; do
 
 done <<< "$DB_INSTANCE"
 
-
+touch newrelic.ini
 # Try and start the server in a loop because NewRelic sometimes fails
 # to start up initially
 while ! screen -list | grep -q api; do
