@@ -15,6 +15,7 @@ from ..util import cross_origin
 login_log = logging.getLogger("login")
 
 
+basic_login = flask.Blueprint("basic_login", __name__)
 oauth_login = flask.Blueprint("github_login", __name__)
 oauth_logout = flask.Blueprint("oauth_logout", __name__)
 
@@ -45,6 +46,37 @@ github = oauth.remote_app(
     authorize_url='https://accounts.google.com/o/oauth2/auth',
 )'''
 
+@basic_login.route("/me")
+@cross_origin(methods=["GET"], origins=config.CORS_ORIGINS, supports_credentials=True)
+def me():
+    if "user_id" in flask.session:
+        return flask.jsonify({
+            "user_id": flask.session["user_id"],
+        })
+    else:
+        return flask.jsonify(None)
+
+
+@basic_login.route("/", methods=["POST"])
+def login():
+    code = flask.request.form["code"]
+
+    with model.engine.connect() as conn:
+        user = conn.execute(sqlalchemy.sql.select([
+            model.users.c.id,
+        ]).select_from(model.users).where(
+            (model.users.c.verification_code == code)
+        )).first()
+
+        if not user:
+            raise util.APIError(
+                403,
+                message="Access denied. Reason: Invalid verification code"
+            )
+        else:
+            flask.session["user_id"] = user["id"]
+            return util.response_success()
+            #return flask.redirect(urllib.parse.urljoin(config.SITE_URL, "/user/?me"))
 
 @oauth_login.route("/github")
 def github_login_init():
@@ -67,7 +99,7 @@ def google_login_init():
     return google.authorize(callback=full_url)
 '''
 
-@oauth_login.route("/me")
+'''@oauth_login.route("/me")
 @cross_origin(methods=["GET"], origins=config.CORS_ORIGINS, supports_credentials=True)
 def me():
     if config.SESSION_COOKIE in flask.session:
@@ -91,7 +123,7 @@ def me():
             })
 
     return flask.jsonify(None)
-
+'''
 
 @oauth_logout.route("/", methods=["POST"])
 @cross_origin(methods=["POST"], origins=config.CORS_ORIGINS, supports_credentials=True)
