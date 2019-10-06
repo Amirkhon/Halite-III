@@ -77,9 +77,9 @@ DATABASE_PROJECT_ID = "dynamic-concept-254710"
 DATABASE_URL = "postgresql+psycopg2://postgres:postgres@localhost:{port}/halite3"
 DATABASES = [
     # Read-write master
-    ("us-east1-b", "dynamic-concept-254710:us-east1:halite3", 3307),
+    ("us-east1-b", "halite3", 3307),
     # Read replica
-    ("us-east1-b", "dynamic-concept-254710:us-east1:halite3-replica", 3308),
+    ("us-east1-b", "halite3-replica", 3308),
 ]
 
 # OAuth
