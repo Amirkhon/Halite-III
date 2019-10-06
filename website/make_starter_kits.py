@@ -339,10 +339,10 @@ def main():
             #     "name": "Benchmark Bots",
             #     "files": [BENCHMARK_FILE, None, None, None],
             # },
-            {
-                "name": "Halite Visualizer & Gym",
-                "files": make_box_halite_download(args.box_dir),
-            },
+            # {
+            #     "name": "Halite Visualizer & Gym",
+            #     "files": make_box_halite_download(args.box_dir),
+            # },
             {
                 "name": "CLI Client Tools",
                 "files": [TOOLS_FILE, None, None, None],
