@@ -1,7 +1,7 @@
 from passlib.context import CryptContext
 
 # General coordinator settings
-COMPETITION_OPEN = False
+COMPETITION_OPEN = True
 # Original PHP: "compState", "finalsPairing"
 COMPETITION_FINALS_PAIRING = False
 # Final open game id, set this to the id of last game played in the open stage
