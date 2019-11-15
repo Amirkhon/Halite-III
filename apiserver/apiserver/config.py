@@ -69,6 +69,7 @@ GCLOUD_ERROR_LOG_BUCKET = 's24_el'
 GCLOUD_DEPLOYED_ARTIFACTS_BUCKET = 's24_da'
 GCLOUD_EDITOR_BUCKET = 's24_e'
 GCLOUD_WORKER_LOG_BUCKET = 's24_wl'
+GCLOUD_STARTER_BUCKET='s24_sb'
 
 # The name of the worker source blob in the object storage bucket.
 WORKER_ARTIFACT_KEY = "Halite.tgz"

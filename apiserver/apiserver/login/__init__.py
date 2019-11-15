@@ -74,9 +74,19 @@ def login():
                 message="Access denied. Reason: Invalid verification code"
             )
         else:
-            flask.session["user_id"] = user["id"]
-            return util.response_success()
-            #return flask.redirect(urllib.parse.urljoin(config.SITE_URL, "/user/?me"))
+            session_secret = secrets.token_hex(16)
+            conn.execute(model.users.update().values(
+                session_secret=session_secret,
+            ).where(model.users.c.id == user["id"]))
+
+            flask.session[config.SESSION_COOKIE] = user["id"]
+            flask.session[config.SESSION_SECRET] = session_secret
+            flask.session.permanent = True
+
+            if "redirectURL" in flask.request.args:
+                return flask.redirect(flask.request.args["redirectURL"])
+            else:
+                return flask.redirect(config.SITE_URL)
 
 @oauth_login.route("/github")
 def github_login_init():
