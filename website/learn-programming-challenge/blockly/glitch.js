@@ -92,7 +92,7 @@ function exportBot(workspace) {
 }
 
 function apiUrl(url) {
-    return `https://35.237.189.116/v1/${url}`;
+    return `http://34.73.26.141/v1/${url}`;
 }
 
 async function fetchApi(endpoint, params) {

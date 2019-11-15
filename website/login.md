@@ -9,13 +9,13 @@ content: website
 <h4 class="mt3">Choose your account type:</h4>
 
 <div class="login-choices">
-<a href="https://35.237.189.116/v1/login/github" class="login-choice">
+<a href="http://34.73.26.141/v1/login/github" class="login-choice">
 <!-- <img src="/assets/images/octocat.jpg" /> -->
 <img src="/assets/images/GitHub-Mark.png" alt="Github" style="width:64px;height:64px;padding:10px;"/>Connect with GitHub
 </a>
 </div>
 <div class="login-choices">
-<a href="https://35.237.189.116/v1/login/google" class="login-choice">
+<a href="http://34.73.26.141/v1/login/google" class="login-choice">
 <img src="/assets/images/btn_google_light.png" alt="Google" style="width:64px;height:64px;padding:10px;"/>Connect with Google
 </a>
 </div>
