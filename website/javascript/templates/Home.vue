@@ -17,13 +17,11 @@
                 <div class="title">Hi, {{ user.username }}! </div>
                 <div class="text-tips">
                     Submit your first bot to get on the leaderboard.<br/>
-                    Choose your language to start building:
                 </div>
                 <a
-                  v-if="has_bots"
                   class="btn btn-primary btn-sm"
                   href="/learn-programming-challenge/">Play now</a>
-                <div v-else class="submit-bot">
+                <!--div v-else class="submit-bot">
                   <v-select
                     placeholder="Choose bot language"
                     v-model="bot_language"
@@ -31,7 +29,7 @@
                   </v-select>
 
                   <a class="btn btn-primary btn-sm" @click="submit_bot">Submit Bot</a>
-                </div>
+                </div-->
             </div>
             <div class="right-container">
                 <div class="data-item">
