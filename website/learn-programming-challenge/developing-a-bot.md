@@ -16,7 +16,6 @@ sort_key: 3
 ##### Compilation Failures
 You will get an email notifying you if your bot fails to compile on the game servers. The most common causes of compilation failures are:
 * **Compilation errors in your code:** Make sure that you can compile your bot locally before submitting it to our game servers. A typo can make a big difference!
-* **Infrastructure issues:** You can reach out to the Halite Team to add first class support for your bot. To read more about customizing a bot, check out [our guide](/learn-programming-challenge/contributing).
 * **Incorrect bot archive structure:** Your file structure should adhere to the following format:
   * You should have a `MyBot.{extension for language}` in the root folder of your zip archive.
   * If you are building on top of a starter kit provided by us, make sure to include the /hlt folder.
@@ -83,8 +82,4 @@ You can replay games with the exact same map to debug or tweak bot behavior. To 
 
 <br/>
 
-</div>
-
-<div class="build-a-bot text-center">
-  <a href="/editor" class="btn btn-primary">Build a bot</a>
 </div>

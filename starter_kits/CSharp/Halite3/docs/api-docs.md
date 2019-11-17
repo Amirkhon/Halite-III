@@ -217,6 +217,3 @@ A direction is an (x, y) tuple indicating the direction of movement from an orig
 
 </div>
 
-<div class="build-a-bot text-center">
-  <a href="#" class="btn btn-primary">Build a bot</a>
-</div>
