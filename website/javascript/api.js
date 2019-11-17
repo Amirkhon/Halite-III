@@ -352,6 +352,12 @@ export function resend_verification_email(user_id) {
     });
 }
 
+export function get_last_match_game_id() {
+  return Promise.resolve($.get(`${API_SERVER_URL}/match?order_by=desc,game_id&limit=1`)).then((list) => {
+    return list[0].game_id
+  })
+}
+
 export function get_replay (game_id, progress_callback) {
   let game_data_promise = Promise.resolve($.get(`${API_SERVER_URL}/user/0/match/${game_id}`))
   let replay_promise = new Promise((resolve, reject) => {

@@ -80,7 +80,7 @@
                 <a class="btn btn-primary" href="/learn-programming-challenge/">Play now</a>
             </div>
         </div>
-        <div class="row section-overview">
+        <!--div class="row section-overview">
             <div class="col-md-12" style="width:66.66%;margin:auto;text-align:center;">
                 <h2>How to Play</h2>
                 <p>The Halite III challenge runs through January 22, 2019.</p>
@@ -114,7 +114,7 @@
                     <p> Learn more about careers at Two Sigma <a href="https://www.twosigma.com/careers" onclick="javascript:handleOutboundLinkClicks('click-external', 'click-ts','careers');return true;">here</a>.</p>
                 </div>
             </div>
-        </div>
+        </div-->
 
     </div>
 </template>

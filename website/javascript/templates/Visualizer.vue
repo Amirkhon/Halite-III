@@ -366,6 +366,11 @@ export default {
             visualizer.onPause.add(() => {
               this.playing = false
             })
+            visualizer.onEnd.add(() => {
+              api.get_last_match_game_id().then((game_id) => {
+                window.location.replace(`/play/?game_id=${game_id}`)
+              })
+            })
             visualizer.onSelect.add((kind, args) => {
               if (kind === null) {
                 this.selected.kind = ''
